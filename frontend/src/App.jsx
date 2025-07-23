@@ -1,25 +1,22 @@
-import React, { useState } from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Login from './pages/login';
+// App.jsx
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Dashboard from './pages/Dashboard';
 
-
+import { ThemeProvider } from './context/themeContext'; // Make sure the path is correct
 
 function App() {
   return (
-    <>
-    <Router>
+    <ThemeProvider>
       <Routes>
-        <Route path='/' element={<Login/>}/>
-        <Route path='/signup' element={<Signup/>}/>
-        <Route path='/dashboard' element={<Dashboard/>}/>
+        <Route path="/" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
-    </Router>
-    </>
-    
-       
-  )
+    </ThemeProvider>
+  );
 }
 
-export default App
+export default App;
